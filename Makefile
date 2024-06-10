@@ -37,8 +37,8 @@ run-cw9: $(EXEC1)
 	./$(EXEC1) $(THREADS) $(SECTIONS)
 
 help:
-	@echo "make run-cw7		Kompiluje i uruchamia programy powielacz.c i wykluczanie.c"
-	@echo "make all			Kompiluje programy powielacz.c i wykluczanie.c"
+	@echo "make run-cw9		Kompiluje i uruchamia program cw9.c"
+	@echo "make all			Kompiluje program cw9.c"
 	@echo "make clean  		Usuwa pliki .x, .o"
 
 .PHONY: clean

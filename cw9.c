@@ -9,16 +9,10 @@
 
 #define MAX_THREADS 10
 
-//pthread_t threads[MAX_THREADS];
 pthread_mutex_t mutex;
-
 int number;
 unsigned int threads_count; 
 unsigned int section_count;
-
-
-
-
 
 void *thread_start(void *arg)
 {
@@ -85,6 +79,8 @@ int main(int argc, char *argv[])
 
     createMutex(&mutex);
 
+    // tworzymy wątki
+
     for(int i = 0; i < threads_count; i++)
     {
         int *buffer = malloc(sizeof(int));
@@ -97,6 +93,8 @@ int main(int argc, char *argv[])
         joinThread(threads[i]);
     }
 
+    // numer jest poprawny jeśli jest równy liczbie wątków * liczba sekcji
+    
     if(number == threads_count * section_count)
     {
         printf("Number is correct\n");
